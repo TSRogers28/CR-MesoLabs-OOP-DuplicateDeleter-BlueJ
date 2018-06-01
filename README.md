@@ -1,5 +1,5 @@
 
-# Delete Duplicates 
+# Delete Duplicates
 * **Objective**
 	* To write methods which remove duplicate elements from an array.
 * **Purpose**
@@ -42,48 +42,36 @@
 
     ```
     // : Given
-    Integer[] array = new Integer[]{1,1,1,23,23,56,57,58};
+    Integer[] array = new Integer[]{1, 1, 1, 23, 23, 56, 57, 58};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicateExactly(3);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = new Integer[]{23, 23, 56, 57, 58};
+    assertArrayEquals(expected, actual);
     ```
 
-* Sample Output
 
-    ```
-    [23,23,56,57,58]
-    ```
-    
-    
-    
 
 ### Example 2
 * Sample Script
 
     ```
     // : Given
-    Integer[] array = new Integer[]{1,1,1,23,23,56,57,58};
+    Integer[] array = new Integer[]{1, 1, 1, 23, 23, 56, 57, 58};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicateExactly(1);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = {1, 1, 1, 23, 23};
+    assertArrayEquals(expected, actual);
     ```
 
-* Sample Output
 
-    ```
-    [1,1,1,23,23]
-    ```
-    
-    
-    
 
 ### Example 3
 * Sample Script
@@ -92,35 +80,14 @@
     // : Given
     Integer[] array = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicateExactly(3);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = {1, 1, 2, 4, 4, 5, 5, 5, 5};
+    assertArrayEquals(expected, actual);
     ```
-
-* Sample Output
-
-    ```
-    [1, 1, 2, 4, 4, 5, 5, 5, 5]
-    ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -134,23 +101,14 @@
     // : Given
     Integer[] array = new Integer[]{1,1,1,23,23,56,57,58};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicateExactly(1);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = {};
+    assertArrayEquals(expected, actual);
     ```
-
-
-
-* Sample Output
-
-    ```
-    []
-    ```
-
-
 
 
 ### Example 2
@@ -160,22 +118,14 @@
     // : Given
     Integer[] array = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicates(2);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = {2};
+    assertArrayEquals(expected, actual);
     ```
-
-
-
-* Sample Output
-
-    ```
-    [2]
-    ```
-
 
 
 ### Example 3
@@ -185,31 +135,19 @@
     // : Given
     Integer[] array = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicates(3);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = {1, 1, 2, 4, 4};
+    assertArrayEquals(expected, actual);
     ```
 
 
 
-* Sample Output
 
-    ```
-    [1,1,2,4,4]
-    ```
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 <br><br><br><br>
 ## Idempotence
 
@@ -223,45 +161,32 @@
     deleter.removeDuplicates(0);
     deleter.removeDuplicates(1);
     deleter.removeDuplicates(2);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicates(3);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
+		Integer[] expected = {1, 1, 2, 4, 4};
+    assertArrayEquals(expected, actual);
     ```
 
-
-
-* Sample Output
-
-    ```
-    [1,1,2,4,4]
-    ```
-    
 
 ### Example 2
 * Sample Script
 
     ```
     // : Given
-    Integer[] array = new Integer[]{1,1,1,23,23,56,57,58};
+    Integer[] array = new Integer[]{1, 1, 1, 23, 23, 56, 57, 58};
     DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-    deleter.removeDuplicates(0);
+
+		deleter.removeDuplicates(0);
     deleter.removeDuplicates(1);
     deleter.removeDuplicates(2);
-    
+
     // : When
     Integer[] actual = deleter.removeDuplicatesExactly(3);
-    
+
     // : Then
-    System.out.println(Arrays.toString(actual));
-    ```
-
-
-
-* Sample Output
-
-    ```
-    [23,23,56,57,58]
+		Integer[] expected = {23, 23, 56, 57, 58};
+    assertArrayEquals(expected, actual);
     ```
