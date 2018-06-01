@@ -5,6 +5,7 @@
 * **Purpose**
 	* To demonstrate practical understanding of arrays, loops, and basic composition.
 * **Instructions**
+    * The `IntegerDuplicateDeleter` and `StringDuplicateDeleter` both inherit from the abstract class `DuplicateDeleter`. The `DuplicateDeleter` class has two required methods that the IntegerDuplicateDeleter and StringDuplicateDeleter need to implement. You need to add the two methods into the two classes and add a constructor to call the `DuplicateDeleter` method to make your code compile.
     * Given an object, `IntegerDuplicateDeleter`, with a composite `Integer[]` object, write a method
         * `removeDuplicatesExactly` which removes all values in the array which occur exactly the specified number of times.
         * `removeDuplicates` which removes all values in the array which occur at least the specified number of times.
